@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "/home/elvio/.dotnet/store/|arch|/|tfm|",
+      "/home/elvio/.nuget/packages"
+    ]
+  }
+}

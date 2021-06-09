@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "7jhQOZHj3tbP6GIYuFx00Hz3xIHVHpB/3H7XVKaaXff0iQfCbOm3mn5r5yUM3RVp2rW7vBK4sdO9ke4Z5WRqpQ==",
+  "success": true,
+  "projectFilePath": "/home/elvio/infotec/InpulseWeb/src/Inpulse.Autentication.WebApi/Inpulse.Autentication.WebApi.csproj",
+  "expectedPackageFiles": [
+    "/home/elvio/.nuget/packages/microsoft.extensions.apidescription.server/3.0.0/microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "/home/elvio/.nuget/packages/microsoft.openapi/1.2.3/microsoft.openapi.1.2.3.nupkg.sha512",
+    "/home/elvio/.nuget/packages/swashbuckle.aspnetcore/5.6.3/swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
+    "/home/elvio/.nuget/packages/swashbuckle.aspnetcore.swagger/5.6.3/swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",
+    "/home/elvio/.nuget/packages/swashbuckle.aspnetcore.swaggergen/5.6.3/swashbuckle.aspnetcore.swaggergen.5.6.3.nupkg.sha512",
+    "/home/elvio/.nuget/packages/swashbuckle.aspnetcore.swaggerui/5.6.3/swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512"
+  ],
+  "logs": []
+}
