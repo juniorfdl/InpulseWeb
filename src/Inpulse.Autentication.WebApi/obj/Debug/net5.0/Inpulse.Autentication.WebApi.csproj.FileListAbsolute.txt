@@ -29,3 +29,44 @@
 /home/elvio/infotec/InpulseWeb/src/Inpulse.Autentication.WebApi/obj/Debug/net5.0/Inpulse.Autentication.WebApi.genruntimeconfig.cache
 /home/elvio/infotec/InpulseWeb/src/Inpulse.Autentication.WebApi/bin/Debug/net5.0/Inpulse.Autentication.Domain.dll
 /home/elvio/infotec/InpulseWeb/src/Inpulse.Autentication.WebApi/bin/Debug/net5.0/Inpulse.Autentication.Domain.pdb
+/home/elvio/infotec/InpulseWeb/src/Inpulse.Autentication.WebApi/bin/Debug/net5.0/Microsoft.EntityFrameworkCore.dll
+/home/elvio/infotec/InpulseWeb/src/Inpulse.Autentication.WebApi/bin/Debug/net5.0/Microsoft.EntityFrameworkCore.Abstractions.dll
+/home/elvio/infotec/InpulseWeb/src/Inpulse.Autentication.WebApi/bin/Debug/net5.0/Microsoft.EntityFrameworkCore.InMemory.dll
+/home/elvio/infotec/InpulseWeb/src/Inpulse.Autentication.WebApi/bin/Debug/net5.0/Microsoft.Extensions.DependencyInjection.dll
+/home/elvio/infotec/InpulseWeb/src/Inpulse.Autentication.WebApi/bin/Debug/net5.0/System.Diagnostics.DiagnosticSource.dll
+C:\BKP Elvio\unj\InpulseWeb\src\Inpulse.Autentication.WebApi\bin\Debug\net5.0\appsettings.Development.json
+C:\BKP Elvio\unj\InpulseWeb\src\Inpulse.Autentication.WebApi\bin\Debug\net5.0\appsettings.json
+C:\BKP Elvio\unj\InpulseWeb\src\Inpulse.Autentication.WebApi\bin\Debug\net5.0\Inpulse.Autentication.WebApi.exe
+C:\BKP Elvio\unj\InpulseWeb\src\Inpulse.Autentication.WebApi\bin\Debug\net5.0\Inpulse.Autentication.WebApi.deps.json
+C:\BKP Elvio\unj\InpulseWeb\src\Inpulse.Autentication.WebApi\bin\Debug\net5.0\Inpulse.Autentication.WebApi.runtimeconfig.json
+C:\BKP Elvio\unj\InpulseWeb\src\Inpulse.Autentication.WebApi\bin\Debug\net5.0\Inpulse.Autentication.WebApi.runtimeconfig.dev.json
+C:\BKP Elvio\unj\InpulseWeb\src\Inpulse.Autentication.WebApi\bin\Debug\net5.0\Inpulse.Autentication.WebApi.dll
+C:\BKP Elvio\unj\InpulseWeb\src\Inpulse.Autentication.WebApi\bin\Debug\net5.0\ref\Inpulse.Autentication.WebApi.dll
+C:\BKP Elvio\unj\InpulseWeb\src\Inpulse.Autentication.WebApi\bin\Debug\net5.0\Inpulse.Autentication.WebApi.pdb
+C:\BKP Elvio\unj\InpulseWeb\src\Inpulse.Autentication.WebApi\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.dll
+C:\BKP Elvio\unj\InpulseWeb\src\Inpulse.Autentication.WebApi\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\BKP Elvio\unj\InpulseWeb\src\Inpulse.Autentication.WebApi\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.InMemory.dll
+C:\BKP Elvio\unj\InpulseWeb\src\Inpulse.Autentication.WebApi\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
+C:\BKP Elvio\unj\InpulseWeb\src\Inpulse.Autentication.WebApi\bin\Debug\net5.0\Microsoft.OpenApi.dll
+C:\BKP Elvio\unj\InpulseWeb\src\Inpulse.Autentication.WebApi\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\BKP Elvio\unj\InpulseWeb\src\Inpulse.Autentication.WebApi\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\BKP Elvio\unj\InpulseWeb\src\Inpulse.Autentication.WebApi\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\BKP Elvio\unj\InpulseWeb\src\Inpulse.Autentication.WebApi\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
+C:\BKP Elvio\unj\InpulseWeb\src\Inpulse.Autentication.WebApi\bin\Debug\net5.0\Inpulse.Autentication.Domain.dll
+C:\BKP Elvio\unj\InpulseWeb\src\Inpulse.Autentication.WebApi\bin\Debug\net5.0\Inpulse.Autentication.Domain.pdb
+C:\BKP Elvio\unj\InpulseWeb\src\Inpulse.Autentication.WebApi\obj\Debug\net5.0\Inpulse.Autentication.WebApi.csproj.AssemblyReference.cache
+C:\BKP Elvio\unj\InpulseWeb\src\Inpulse.Autentication.WebApi\obj\Debug\net5.0\Inpulse.Autentication.WebApi.GeneratedMSBuildEditorConfig.editorconfig
+C:\BKP Elvio\unj\InpulseWeb\src\Inpulse.Autentication.WebApi\obj\Debug\net5.0\Inpulse.Autentication.WebApi.AssemblyInfoInputs.cache
+C:\BKP Elvio\unj\InpulseWeb\src\Inpulse.Autentication.WebApi\obj\Debug\net5.0\Inpulse.Autentication.WebApi.AssemblyInfo.cs
+C:\BKP Elvio\unj\InpulseWeb\src\Inpulse.Autentication.WebApi\obj\Debug\net5.0\Inpulse.Autentication.WebApi.csproj.CoreCompileInputs.cache
+C:\BKP Elvio\unj\InpulseWeb\src\Inpulse.Autentication.WebApi\obj\Debug\net5.0\Inpulse.Autentication.WebApi.MvcApplicationPartsAssemblyInfo.cs
+C:\BKP Elvio\unj\InpulseWeb\src\Inpulse.Autentication.WebApi\obj\Debug\net5.0\Inpulse.Autentication.WebApi.MvcApplicationPartsAssemblyInfo.cache
+C:\BKP Elvio\unj\InpulseWeb\src\Inpulse.Autentication.WebApi\obj\Debug\net5.0\staticwebassets\Inpulse.Autentication.WebApi.StaticWebAssets.Manifest.cache
+C:\BKP Elvio\unj\InpulseWeb\src\Inpulse.Autentication.WebApi\obj\Debug\net5.0\staticwebassets\Inpulse.Autentication.WebApi.StaticWebAssets.xml
+C:\BKP Elvio\unj\InpulseWeb\src\Inpulse.Autentication.WebApi\obj\Debug\net5.0\scopedcss\bundle\Inpulse.Autentication.WebApi.styles.css
+C:\BKP Elvio\unj\InpulseWeb\src\Inpulse.Autentication.WebApi\obj\Debug\net5.0\Inpulse.Autentication.WebApi.RazorTargetAssemblyInfo.cache
+C:\BKP Elvio\unj\InpulseWeb\src\Inpulse.Autentication.WebApi\obj\Debug\net5.0\Inpulse.Autentication.WebApi.csproj.CopyComplete
+C:\BKP Elvio\unj\InpulseWeb\src\Inpulse.Autentication.WebApi\obj\Debug\net5.0\Inpulse.Autentication.WebApi.dll
+C:\BKP Elvio\unj\InpulseWeb\src\Inpulse.Autentication.WebApi\obj\Debug\net5.0\ref\Inpulse.Autentication.WebApi.dll
+C:\BKP Elvio\unj\InpulseWeb\src\Inpulse.Autentication.WebApi\obj\Debug\net5.0\Inpulse.Autentication.WebApi.pdb
+C:\BKP Elvio\unj\InpulseWeb\src\Inpulse.Autentication.WebApi\obj\Debug\net5.0\Inpulse.Autentication.WebApi.genruntimeconfig.cache

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "YxHacyeIj92H9kqkda59+gAHvXalEFNZO/107xBxR2xAnHbdECnaQAeqZ1/lc6noUuzCeIjTAbXEUIMeAqLSQw==",
+  "dgSpecHash": "1i3bwMUyB+IIiM0Abl0GN+oi28GqHYHxqKDsMh/jMtr19zKZKeTxO84canYOwwoYn4N5BFB75kqL+KUlOzr86Q==",
   "success": true,
-  "projectFilePath": "/home/elvio/infotec/InpulseWeb/src/Inpulse.Autentication.Domain/Inpulse.Autentication.Domain.csproj",
+  "projectFilePath": "C:\\BKP Elvio\\unj\\InpulseWeb\\src\\Inpulse.Autentication.Domain\\Inpulse.Autentication.Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
