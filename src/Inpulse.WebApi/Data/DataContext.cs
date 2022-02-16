@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using Inpulse.Autentication.Domain;
+using Inpulse.Domain;
 
 namespace Inpulse.WebApi.Data
 {
@@ -12,6 +12,13 @@ namespace Inpulse.WebApi.Data
         }
 
         public DbSet<Usuarios> Usuarios { get; set; }        
-        public DbSet<Tenants> Tenants { get; set; }
+        public DbSet<Operadores> Operadores { get; set; }
+        public DbSet<Acoes> Acoes { get; set; }
+        public DbSet<Campanhas> Campanhas { get; set; }
+        public DbSet<CampanhasXOperadores> CampanhasXOperadores { get; set; }
+        public DbSet<CampanhasClientes> CampanhasClientes { get; set; }
+        public DbSet<CampanhaClientesCor> CampanhaClientesCors { get; set; }
+        public DbSet<Cargos> Cargos { get; set; }
+        public DbSet<ChamadasPerdidas> ChamadasPerdidas { get; set; }
     }
 }

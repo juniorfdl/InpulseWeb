@@ -27,8 +27,19 @@ namespace Inpulse.WebApi
             //     options.MimeTypes = ResponseCompressionDefaults.MimeTypes.Concat(new[] { "application/json" });
             // });
             services.AddControllers();
-            services.AddDbContext<DataContext>(opt => opt.UseInMemoryDatabase("DataBase"));
-
+            services.AddMvc();
+            
+            //services.AddDbContext<DataContext>(opt => 
+            //    opt.UseInMemoryDatabase("DataBase"));
+            
+            //var mySqlConnectionStr = Configuration["ConnectionMySql:ConnectionString"];
+            var mySqlConnectionStr = 
+                "Server=localhost;Database=crm_sgr;uid=root;password=root;" +
+                "Allow Zero Datetime=true;convert zero datetime=True";
+            
+            services.AddDbContext<DataContext>(options => 
+                options.UseMySql(mySqlConnectionStr, ServerVersion.AutoDetect(mySqlConnectionStr)));
+            
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Inpulse.WebApi", Version = "v1" });

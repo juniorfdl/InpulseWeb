@@ -12,7 +12,7 @@ namespace Inpulse.WebApi.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class AcoesController : CrudControllerBase<Acoes>
+    public class ChamadasPerdidasController : CrudControllerBase<ChamadasPerdidas>
     {
         
     }    

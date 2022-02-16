@@ -1,7 +1,6 @@
-
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Inpulse.Autentication.Domain;
+using Inpulse.Domain;
 using System;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;

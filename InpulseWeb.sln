@@ -5,9 +5,9 @@ VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{6F8994E3-39DA-470E-A6CE-878E65A8967A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inpulse.Autentication.WebApi", "src\Inpulse.Autentication.WebApi\Inpulse.Autentication.WebApi.csproj", "{3E6CC5F2-A4FC-4FC1-8ADC-F9B7EFC00CCF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inpulse.WebApi", "src\Inpulse.WebApi\Inpulse.WebApi.csproj", "{3E6CC5F2-A4FC-4FC1-8ADC-F9B7EFC00CCF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inpulse.Autentication.Domain", "src\Inpulse.Autentication.Domain\Inpulse.Autentication.Domain.csproj", "{17CE5482-27FE-4B75-A808-F2C8A5726D61}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inpulse.Domain", "src\Inpulse.Domain\Inpulse.Domain.csproj", "{17CE5482-27FE-4B75-A808-F2C8A5726D61}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -12,7 +12,7 @@ namespace Inpulse.WebApi.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class CampanhasClientesController : CrudControllerBase<CampanhasClientes>
+    public class CampanhaClientesCorController : CrudControllerBase<CampanhaClientesCor>
     {
         
     }    
