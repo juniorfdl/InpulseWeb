@@ -20,5 +20,10 @@ namespace Inpulse.WebApi.Data
         public DbSet<CampanhaClientesCor> CampanhaClientesCors { get; set; }
         public DbSet<Cargos> Cargos { get; set; }
         public DbSet<ChamadasPerdidas> ChamadasPerdidas { get; set; }
+        public DbSet<ChamadasReceptivo> ChamadasReceptivo { get; set; }
+        public DbSet<Cidades> Cidades { get; set; }
+        public DbSet<CidadesDDD> CidadesDDD { get; set; }
+        public DbSet<Clientes> Clientes { get; set; }
+        public DbSet<ClientesBase> ClientesBase { get; set; }
     }
 }
