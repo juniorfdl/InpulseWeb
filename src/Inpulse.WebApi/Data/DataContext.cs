@@ -25,5 +25,11 @@ namespace Inpulse.WebApi.Data
         public DbSet<CidadesDDD> CidadesDDD { get; set; }
         public DbSet<Clientes> Clientes { get; set; }
         public DbSet<ClientesBase> ClientesBase { get; set; }
+        public DbSet<ClientesMarcas> ClientesMarcas { get; set; }
+        public DbSet<Compras> Compras { get; set; }
+        public DbSet<ConfigMail> ConfigMail { get; set; }
+        public DbSet<ConfigMailOperador> ConfigMailOperador { get; set; }
+        public DbSet<Consultas> Consultas { get; set; }
+        public DbSet<Contatos> Contatos { get; set; }
     }
 }

@@ -10,6 +10,7 @@ using System.Reflection;
 using Inpulse.WebApi.Data;
 using Inpulse.Domain;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.Extensions.Hosting;
 
 namespace Inpulse.WebApi.Base
@@ -66,16 +67,19 @@ namespace Inpulse.WebApi.Base
                 else
                 if (propertyInfo.PropertyType == typeof(Nullable<int>))
                 {
+                    //var asInt32 = Convert.ToInt32(termoDePesquisa);
+                    //body = BuildIdPredicate<T, int>(asInt32, campoPesquisa);
                     // //var myInstance = new myClass();
-                     var equalsMethod = typeof(Int32?).GetMethod("Equals", new[] { typeof(Int32?) });
-                     int? nullableInt = Convert.ToInt32(termoDePesquisa);
-                     var nullableIntExpr = System.Linq.Expressions.Expression.Constant(nullableInt);
+                    // var equalsMethod = typeof(Int32?).GetMethod("Equals", new[] { typeof(Int32?) });
+                    // int? nullableInt = Convert.ToInt32(termoDePesquisa);
+                    // var nullableIntExpr = System.Linq.Expressions.Expression.Constant(nullableInt);
                      //var myInstanceExpr = System.Linq.Expressions.Expression.Constant(myInstance);
-                     var propertyExpr = property;
+                    // var propertyExpr = property;
                     //// body = Expression.Call(propertyExpr, equalsMethod, nullableIntExpr); // This line throws the exception.     
 
-                     var converted = Expression.Convert(nullableIntExpr, typeof(int?));
-                     body = Expression.Call(propertyExpr, equalsMethod, converted);                    
+                     //var converted = Expression.Convert(nullableIntExpr, typeof(int?));
+                     //var lambda = Expression.Lambda<Func<TProjecao, bool>>(condition, parameter);
+                     //body = Expression.Call(propertyExpr, equalsMethod, converted);                    
                     
                     //var asInt32 = Convert.ToInt32(termoDePesquisa);
                     //body = Expression.Equal(property, Expression.Constant(asInt32));
@@ -86,8 +90,24 @@ namespace Inpulse.WebApi.Base
                 return query.Take(0);
             }
             var filterExp = Expression.Lambda<Func<TProjecao, bool>>(body, parameter);
-
+            
             return query.Where(filterExp);
+        }
+        
+        public Expression<Func<TModel, bool>> BuildIdPredicate<TModel, T2>(T2 id, string campoPesquisa)
+            where TModel : class
+        {
+            Expression<Func<TModel, bool>> predicate = null;
+            
+                var value = id;
+                var parameter = Expression.Parameter(typeof(TModel), typeof(TModel).Name);
+                var memberExpression = Expression.Property(parameter, campoPesquisa);
+                //value = value.ChangeType(memberExpression.Type);
+                var condition = Expression.Equal(memberExpression, Expression.Convert(Expression.Constant(value), memberExpression.Type));
+                var lambda = Expression.Lambda<Func<TModel, bool>>(condition, parameter);
+                predicate = predicate?.AndAlso(lambda) ?? lambda;
+            
+            return predicate;
         }
         
         [HttpGet]
@@ -144,8 +164,8 @@ namespace Inpulse.WebApi.Base
             {
                 if (model.Id == 0)
                 {
-                   model.Id = await context.Set<T>().MaxAsync(p => p.Id);
-                   model.Id++;
+                    model.Id = await SelectMaxCompositeKeyAsync<T>(context, model);
+                    model.Id++;
                 }
                 
                 await ProcessarAntesPost(context, model);
@@ -160,6 +180,43 @@ namespace Inpulse.WebApi.Base
 
                 return BadRequest(new {message = "Não foi possível criar o registro", error = msg});
             }
+        }
+        
+        private static async Task<int> SelectMaxCompositeKeyAsync<TModel>(DbContext dbContext, TModel model)
+            where TModel : class
+        {
+            var entityType = dbContext.Model.FindEntityType(typeof(TModel));
+            var maxKey = GetExpressionMax<TModel, int>("Id");
+            var query = dbContext.Set<TModel>().AsQueryable();
+            var keys = entityType.FindPrimaryKey().Properties;
+            query = AddWhereForPk(query, model, keys, keys.Count);
+            return await query.MaxAsync(maxKey) ?? default;
+        }
+        private static IQueryable<TModel> AddWhereForPk<TModel>(IQueryable<TModel> query, TModel model,
+            IReadOnlyList<IProperty> keys, int keysCount)
+            where TModel : class
+        {
+            var param = Expression.Parameter(typeof(TModel));
+            for (var i = 0; i < keysCount - 1; i++) query = AddWhereForPkProperty(query, model, param, keys[i]);
+            return query;
+        }
+        
+        private static IQueryable<TModel> AddWhereForPkProperty<TModel>(IQueryable<TModel> query, TModel model, ParameterExpression param, IPropertyBase key)
+            where TModel : class
+        {
+            var pkProperty = Expression.Property(param, key.Name);
+            var pkValue = key.PropertyInfo.GetValue(model);
+            var valueExpression = Expression.Convert(Expression.Constant(pkValue), key.PropertyInfo.PropertyType);
+            var body = Expression.Equal(pkProperty, valueExpression);
+            var wherePk = Expression.Lambda<Func<TModel, bool>>(body, param);
+            return query.Where(wherePk);
+        }
+        private static Expression<Func<TModel, TRetorno?>> GetExpressionMax<TModel, TRetorno>(string propertyName)
+            where TRetorno : struct
+        {
+            var parameter = Expression.Parameter(typeof(TModel));
+            var propertyReference = Expression.Convert(Expression.Property(parameter, propertyName), typeof(TRetorno?));
+            return Expression.Lambda<Func<TModel, TRetorno?>>(propertyReference, parameter);
         }
         
         protected virtual async Task ProcessarAntesPost(DataContext context, T model)
