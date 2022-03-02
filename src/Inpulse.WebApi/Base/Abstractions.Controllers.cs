@@ -162,13 +162,14 @@ namespace Inpulse.WebApi.Base
 
             try
             {
+                await ProcessarAntesPost(context, model);
+                
                 if (model.Id == 0)
                 {
                     model.Id = await SelectMaxCompositeKeyAsync<T>(context, model);
                     model.Id++;
                 }
-                
-                await ProcessarAntesPost(context, model);
+
                 context.Set<T>().Add(model);
                 await context.SaveChangesAsync();
                 return Ok(model);

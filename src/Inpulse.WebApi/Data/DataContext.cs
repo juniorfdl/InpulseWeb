@@ -31,5 +31,15 @@ namespace Inpulse.WebApi.Data
         public DbSet<ConfigMailOperador> ConfigMailOperador { get; set; }
         public DbSet<Consultas> Consultas { get; set; }
         public DbSet<Contatos> Contatos { get; set; }
+        public DbSet<DDDsDiferentes> DDDsDiferentes { get; set; }
+        public DbSet<DDDOperadores> DDDOperadores { get; set; }
+        public DbSet<EstadosOperadores> EstadosOperadores { get; set; }
+        public DbSet<Excecoes> Excecoes { get; set; }
+        public DbSet<ExcecoesCidade> ExcecoesCidade { get; set; }
+        public DbSet<ExcecoesEstado> ExcecoesEstado { get; set; }
+        public DbSet<ExcecoesSegmentos> ExcecoesSegmentos { get; set; }
+        public DbSet<FaseContato> FaseContato { get; set; }
+        public DbSet<Feriados> Feriados { get; set; }
+        public DbSet<Fidelizacoes> Fidelizacoes { get; set; }
     }
 }
