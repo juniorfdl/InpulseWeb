@@ -52,5 +52,13 @@ namespace Inpulse.WebApi.Data
         public DbSet<FoneDigito> FoneDigito { get; set; }
         public DbSet<Grupos> Grupos { get; set; }
         public DbSet<GruposXOperadores> GruposXOperadores { get; set; }
+        public DbSet<GruposOperador> GruposOperador { get; set; }
+        public DbSet<HistoricoCli> HistoricoCli { get; set; }
+        public DbSet<Horarios> Horarios { get; set; }
+        public DbSet<ItensCompra> ItensCompra { get; set; }
+        public DbSet<Licenca> Licenca { get; set; }
+        public DbSet<LoginAtivoReceptivo> LoginAtivoReceptivo { get; set; }
+        public DbSet<Marcas> Marcas { get; set; }
+        public DbSet<Midias> Midias { get; set; }
     }
 }
