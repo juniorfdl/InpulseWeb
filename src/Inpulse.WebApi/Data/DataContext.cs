@@ -15,6 +15,8 @@ namespace Inpulse.WebApi.Data
         {
             modelBuilder.Entity<FoneDigito>()
                 .HasKey(c => new { c.UF, c.DDD, c.DIGITO });
+            modelBuilder.Entity<MotivoDesativacaoCliente>().HasKey(c => 
+                new { c.Cliente, c.Motivo, c.Operador, c.DataHora });
         }
 
         public DbSet<Usuarios> Usuarios { get; set; }        
@@ -60,5 +62,7 @@ namespace Inpulse.WebApi.Data
         public DbSet<LoginAtivoReceptivo> LoginAtivoReceptivo { get; set; }
         public DbSet<Marcas> Marcas { get; set; }
         public DbSet<Midias> Midias { get; set; }
+        public DbSet<MotivosPausa> MotivosPausa { get; set; }
+        public DbSet<MotivoDesativacaoCliente> MotivoDesativacaoCliente { get; set; }
     }
 }
