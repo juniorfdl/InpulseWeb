@@ -64,5 +64,10 @@ namespace Inpulse.WebApi.Data
         public DbSet<Midias> Midias { get; set; }
         public DbSet<MotivosPausa> MotivosPausa { get; set; }
         public DbSet<MotivoDesativacaoCliente> MotivoDesativacaoCliente { get; set; }
+        public DbSet<OperadoresConfigSIP> OperadoresConfigSIP { get; set; }
+        public DbSet<OperadoresERP> OperadoresERP { get; set; }
+        public DbSet<OperadoresEspera> OparadoresEspera { get; set; }
+        public DbSet<OperadoresFoto> OperadoresFoto { get; set; }
+        public DbSet<OperadoresLigacoes> OperadoresLigacoes { get; set; }
     }
 }
