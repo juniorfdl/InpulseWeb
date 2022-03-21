@@ -17,6 +17,10 @@ namespace Inpulse.WebApi.Data
                 .HasKey(c => new { c.UF, c.DDD, c.DIGITO });
             modelBuilder.Entity<MotivoDesativacaoCliente>().HasKey(c => 
                 new { c.Cliente, c.Motivo, c.Operador, c.DataHora });
+            modelBuilder.Entity<OperadoresMonitor>().HasKey(c =>
+                new { c.Id, c.Id_DB });
+            modelBuilder.Entity<PropostasCompras>().HasKey(c => 
+                new { c.Id, c.Compra });
         }
 
         public DbSet<Usuarios> Usuarios { get; set; }        
@@ -69,5 +73,15 @@ namespace Inpulse.WebApi.Data
         public DbSet<OperadoresEspera> OparadoresEspera { get; set; }
         public DbSet<OperadoresFoto> OperadoresFoto { get; set; }
         public DbSet<OperadoresLigacoes> OperadoresLigacoes { get; set; }
+        public DbSet<OperadoresMeta> OperadoresMeta { get; set; }
+        public DbSet<OperadoresMonitor> OperadoresMonitor { get; set; }
+        public DbSet<OperadoresStatus> OperadoresStatus { get; set; }
+        public DbSet<OrigensSGR> OrigensSGR { get; set; }
+        public DbSet<ParametrosEnvioRelatorios> ParametrosEnvioRelatorios { get; set; }
+        public DbSet<ParametrosMail> ParametrosMail { get; set; }
+        public DbSet<PausasRealizadas> PausasRealizadas { get; set; }
+        public DbSet<PrioridadeCampanha> PrioridadeCampanha { get; set; }
+        public DbSet<Propostas> Propostas { get; set; }
+        public DbSet<PropostasCompras> PropostasCompras { get; set; }
     }
 }
