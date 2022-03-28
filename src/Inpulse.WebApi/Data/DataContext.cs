@@ -21,6 +21,8 @@ namespace Inpulse.WebApi.Data
                 new { c.Id, c.Id_DB });
             modelBuilder.Entity<PropostasCompras>().HasKey(c => 
                 new { c.Id, c.Compra });
+            modelBuilder.Entity<TransferenciaClientesItens>().HasKey(c =>
+                new {c.Cliente, c.Id});
         }
 
         public DbSet<Usuarios> Usuarios { get; set; }        
@@ -83,5 +85,13 @@ namespace Inpulse.WebApi.Data
         public DbSet<PrioridadeCampanha> PrioridadeCampanha { get; set; }
         public DbSet<Propostas> Propostas { get; set; }
         public DbSet<PropostasCompras> PropostasCompras { get; set; }
+        public DbSet<Qualidade> Qualidade { get; set; }
+        public DbSet<Resultados> Resultados { get; set; }
+        public DbSet<Segmentos> Segmentos { get; set; }
+        public DbSet<StatusSip> StatusSip { get; set; }
+        public DbSet<TransferenciaClientes> TransferenciaClientes { get; set; }
+        public DbSet<TransferenciaClientesItens> TransferenciaClientesItens { get; set; }
+        public DbSet<UF> UF { get; set; }
+        public DbSet<Unidades> Unidades { get; set; }
     }
 }
