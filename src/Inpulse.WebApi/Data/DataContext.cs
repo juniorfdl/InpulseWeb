@@ -93,5 +93,6 @@ namespace Inpulse.WebApi.Data
         public DbSet<TransferenciaClientesItens> TransferenciaClientesItens { get; set; }
         public DbSet<UF> UF { get; set; }
         public DbSet<Unidades> Unidades { get; set; }
+        public DbSet<Vendas> Vendas { get; set; }
     }
 }

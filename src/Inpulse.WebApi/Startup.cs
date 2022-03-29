@@ -28,16 +28,9 @@ namespace Inpulse.WebApi
             // });
             services.AddControllers();
             services.AddMvc();
-            
-            //services.AddDbContext<DataContext>(opt => 
-            //    opt.UseInMemoryDatabase("DataBase"));
-            
-            //var mySqlConnectionStr = Configuration["ConnectionMySql:ConnectionString"];
-            var mySqlConnectionStr = 
-                "Server=localhost;Database=crm_sgr;uid=root;password=root;" +
-                "Allow Zero Datetime=true;convert zero datetime=True";
-            
-            services.AddDbContext<DataContext>(options => 
+
+            var mySqlConnectionStr = Configuration.GetConnectionString("DefaultConnection");
+            services.AddDbContext<DataContext>(options =>
                 options.UseMySql(mySqlConnectionStr, ServerVersion.AutoDetect(mySqlConnectionStr)));
             
             services.AddSwaggerGen(c =>
