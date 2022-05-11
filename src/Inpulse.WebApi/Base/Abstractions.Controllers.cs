@@ -67,22 +67,14 @@ namespace Inpulse.WebApi.Base
                 else
                 if (propertyInfo.PropertyType == typeof(Nullable<int>))
                 {
-                    //var asInt32 = Convert.ToInt32(termoDePesquisa);
-                    //body = BuildIdPredicate<T, int>(asInt32, campoPesquisa);
-                    // //var myInstance = new myClass();
-                    // var equalsMethod = typeof(Int32?).GetMethod("Equals", new[] { typeof(Int32?) });
-                    // int? nullableInt = Convert.ToInt32(termoDePesquisa);
-                    // var nullableIntExpr = System.Linq.Expressions.Expression.Constant(nullableInt);
-                     //var myInstanceExpr = System.Linq.Expressions.Expression.Constant(myInstance);
-                    // var propertyExpr = property;
-                    //// body = Expression.Call(propertyExpr, equalsMethod, nullableIntExpr); // This line throws the exception.     
-
-                     //var converted = Expression.Convert(nullableIntExpr, typeof(int?));
-                     //var lambda = Expression.Lambda<Func<TProjecao, bool>>(condition, parameter);
-                     //body = Expression.Call(propertyExpr, equalsMethod, converted);                    
+                    var asInt32 = Convert.ToInt32(termoDePesquisa);
+                    var member = Expression.Property(parameter, campoPesquisa);
                     
-                    //var asInt32 = Convert.ToInt32(termoDePesquisa);
-                    //body = Expression.Equal(property, Expression.Constant(asInt32));
+                    var filter1 =
+                        Expression.Constant(
+                            Convert.ChangeType(asInt32, member.Type.GetGenericArguments()[0]));
+                    Expression typeFilter = Expression.Convert(filter1, member.Type);
+                    body = Expression.Equal(member, typeFilter);
                 }
             }
             catch (FormatException)
@@ -117,7 +109,6 @@ namespace Inpulse.WebApi.Base
             string termo = null, string campoOrdenacao = null, 
             bool direcaoAsc = true,
             int pagina = 1, int itensPorPagina = 0, string campoPesquisa = "")
-            //[FromUri] List<string> filtrosBaseNome = null, [FromUri] List<string> filtrosBaseValor = null)
         {
             var Item = this.Selecionar();
             var queryOriginal = context.Set<T>().AsQueryable().Select(Item);
@@ -126,20 +117,15 @@ namespace Inpulse.WebApi.Base
             {
                 queryOriginal = this.Filtrar(queryOriginal, termo, campoPesquisa);
             }
-            
-            // return new ResultadoDaBusca<TProjecao>
-            // {
-            //     lista = this.TrazerDadosParaLista(queryRetorno),
-            //     totalCount = queryOriginal.Count()
-            // };
+
+            var toSkip = (pagina - 1) * itensPorPagina; 
             var queryRetorno = queryOriginal;
-            var dados = await this.TrazerDadosParaLista(queryRetorno).ToListAsync();
+            var dados = this.TrazerDadosParaLista(queryRetorno);
+                
+            if (itensPorPagina > 0)    
+                dados = dados.Skip(toSkip).Take(itensPorPagina);
             
-            //Response.Headers.Add("X-Pagination", JsonConvert.SerializeObject(paginationMetadata, SerializationHelper.SerializerSettings));
-            
-            //dados.totalCount = queryOriginal.Count();
-            //var dados = await context.Set<T>().AsNoTracking().ToListAsync();
-            return Ok(dados);
+            return Ok(await dados.ToListAsync());
         }
 
         [HttpGet]

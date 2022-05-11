@@ -18,6 +18,7 @@ namespace Inpulse.Domain
         public string FormaPgto {get;set;}
         public int? Operador {get;set;}
         public string Faturado {get;set;}
+        public double? Valor { get; set; }
     }
 
 }

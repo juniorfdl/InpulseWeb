@@ -21,7 +21,7 @@ namespace Inpulse.Domain
         public DateTime? DataHoraFim {get;set;}
         public int? Resultado {get;set;}
         public string Telefone {get;set;}
-        public int? Cliente {get;set;}
+        public int Cliente {get;set;}
         [Column("CODIGO_FASE_CONTATO")]
         public int? CodigoFaseContato {get;set;}
         public int? CC_CODIGO {get;set;}

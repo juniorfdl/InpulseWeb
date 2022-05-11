@@ -87,6 +87,10 @@ namespace Inpulse.Domain
         public DateTime? VencimentoLimiteCredito {get;set;}
         [Column("PERIODO_RECOMPRA")]
         public int?PeriodoRecompra {get;set;}
+        [Column(name:"OBS_ADMIN")]
+        public string ObsAdmin { get; set; }
+        [Column(name:"OBS_OPERADOR")]
+        public string ObsOperador { get; set; }
     }
 
 }
