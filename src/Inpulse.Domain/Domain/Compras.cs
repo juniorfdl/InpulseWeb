@@ -19,6 +19,9 @@ namespace Inpulse.Domain
         public int? Operador {get;set;}
         public string Faturado {get;set;}
         public double? Valor { get; set; }
+        public string Tipo {get;set;}
+        public string Situacao {get;set;}
+        public int? ClienteAtivo {get;set;}
     }
 
 }

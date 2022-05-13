@@ -124,6 +124,8 @@ namespace Inpulse.WebApi.Base
                 
             if (itensPorPagina > 0)    
                 dados = dados.Skip(toSkip).Take(itensPorPagina);
+
+            //if (direcaoAsc) dados = dados.OrderBy(ord => ord.campoOrdenacao ?? campoPesquisa);
             
             return Ok(await dados.ToListAsync());
         }

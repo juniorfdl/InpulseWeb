@@ -29,10 +29,17 @@ namespace Inpulse.WebApi
             services.AddControllers();
             services.AddMvc();
 
-            var mySqlConnectionStr = Configuration.GetConnectionString("DefaultConnection");
-            services.AddDbContext<DataContext>(options =>
-                options.UseMySql(mySqlConnectionStr, ServerVersion.AutoDetect(mySqlConnectionStr)));
-            
+            var host = Configuration["DBHOST"] ?? Configuration.GetConnectionString("DBHOST") ?? "localhost";
+            var port = Configuration["DBPORT"] ?? Configuration.GetConnectionString("DBPORT") ?? "3306";
+            var password = Configuration["PASSWORD"] ?? Configuration.GetConnectionString("PASSWORD");
+            var userid = Configuration["USER"] ?? Configuration.GetConnectionString("USER");
+            var productsdb = Configuration["DATABASE"] ?? Configuration.GetConnectionString("DATABASE");
+
+            string mySqlConnStr = $"server={host}; userid={userid};pwd={password};port={port};database={productsdb}";
+
+            services.AddDbContextPool<DataContext>(options =>
+                options.UseMySql(mySqlConnStr, ServerVersion.AutoDetect(mySqlConnStr)));
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Inpulse.WebApi", Version = "v1" });
