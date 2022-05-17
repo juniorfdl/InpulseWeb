@@ -30,13 +30,13 @@ namespace Inpulse.WebApi
             services.AddControllers();
             services.AddMvc();
 
-            var host = Configuration["DBHOST"] ?? Configuration.GetConnectionString("DBHOST") ?? "localhost";
+            var host = Configuration["DBHOST"] ?? Configuration.GetConnectionString("DBHOST") ?? "127.0.0.1";
             var port = Configuration["DBPORT"] ?? Configuration.GetConnectionString("DBPORT") ?? "3306";
-            var password = Configuration["PASSWORD"] ?? Configuration.GetConnectionString("PASSWORD") ?? "root";
+            var password = Configuration["PASSWORD"] ?? Configuration.GetConnectionString("PASSWORD");
             var userid = Configuration["USER"] ?? Configuration.GetConnectionString("USER") ?? "root";
             var productsdb = Configuration["DATABASE"] ?? Configuration.GetConnectionString("DATABASE") ?? "crm_sgr";
 
-            var mySqlConnStr = $"server={host}; userid={userid};pwd={password};port={port};database={productsdb}; AllowZeroDateTime=True; ConvertZeroDateTime=True";
+            var mySqlConnStr = $"server={host}; userid={userid};pwd={password};port={port};database={productsdb};AllowZeroDateTime=True;ConvertZeroDateTime=True";       
             
             Console.WriteLine(mySqlConnStr);
             
