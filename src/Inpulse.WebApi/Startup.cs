@@ -1,3 +1,4 @@
+using System;
 using Inpulse.WebApi.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -31,12 +32,14 @@ namespace Inpulse.WebApi
 
             var host = Configuration["DBHOST"] ?? Configuration.GetConnectionString("DBHOST") ?? "localhost";
             var port = Configuration["DBPORT"] ?? Configuration.GetConnectionString("DBPORT") ?? "3306";
-            var password = Configuration["PASSWORD"] ?? Configuration.GetConnectionString("PASSWORD");
-            var userid = Configuration["USER"] ?? Configuration.GetConnectionString("USER");
-            var productsdb = Configuration["DATABASE"] ?? Configuration.GetConnectionString("DATABASE");
+            var password = Configuration["PASSWORD"] ?? Configuration.GetConnectionString("PASSWORD") ?? "root";
+            var userid = Configuration["USER"] ?? Configuration.GetConnectionString("USER") ?? "root";
+            var productsdb = Configuration["DATABASE"] ?? Configuration.GetConnectionString("DATABASE") ?? "crm_sgr";
 
             var mySqlConnStr = $"server={host}; userid={userid};pwd={password};port={port};database={productsdb}; AllowZeroDateTime=True; ConvertZeroDateTime=True";
-
+            
+            Console.WriteLine(mySqlConnStr);
+            
             services.AddDbContextPool<DataContext>(options =>
                 options.UseMySql(mySqlConnStr, ServerVersion.AutoDetect(mySqlConnStr)));
 
