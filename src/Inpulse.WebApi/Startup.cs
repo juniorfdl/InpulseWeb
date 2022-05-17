@@ -35,7 +35,7 @@ namespace Inpulse.WebApi
             var userid = Configuration["USER"] ?? Configuration.GetConnectionString("USER");
             var productsdb = Configuration["DATABASE"] ?? Configuration.GetConnectionString("DATABASE");
 
-            string mySqlConnStr = $"server={host}; userid={userid};pwd={password};port={port};database={productsdb}";
+            var mySqlConnStr = $"server={host}; userid={userid};pwd={password};port={port};database={productsdb}; AllowZeroDateTime=True; ConvertZeroDateTime=True";
 
             services.AddDbContextPool<DataContext>(options =>
                 options.UseMySql(mySqlConnStr, ServerVersion.AutoDetect(mySqlConnStr)));

@@ -91,6 +91,7 @@ namespace Inpulse.Domain
         public string ObsAdmin { get; set; }
         [Column(name:"OBS_OPERADOR")]
         public string ObsOperador { get; set; }
+        public string Ativo { get; set; }
     }
 
 }
