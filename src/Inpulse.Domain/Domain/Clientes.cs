@@ -94,7 +94,21 @@ namespace Inpulse.Domain
         public string ObsOperador { get; set; }
         public string Ativo { get; set; }
         [NotMapped]
-        public string Resultado { get; set; }
+        public string _Resultado { get; set; }
+        [NotMapped]
+        public string _Campanha { get; set; }
+        [NotMapped]
+        public string _Carteira { get; set; }
+        [NotMapped]
+        public string _Grupo { get; set; }
+        [NotMapped]
+        public string _Origem { get; set; }
+        [NotMapped]
+        public string _Midia { get; set; }
+        [NotMapped]
+        public string _Operador { get; set; }
+        [NotMapped]
+        public string _Segmento { get; set; }
     }
 
 }
