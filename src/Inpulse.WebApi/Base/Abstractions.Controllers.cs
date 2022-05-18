@@ -21,7 +21,7 @@ namespace Inpulse.WebApi.Base
     {
         protected abstract Expression<Func<T, TProjecao>> Selecionar();
         protected virtual IOrderedQueryable<TProjecao> Ordenar(IQueryable<TProjecao> query) { return query.OrderBy(it => it.Id); }
-        protected virtual IQueryable<T> TrazerDadosParaEdicao(IQueryable<T> query) { return query; }
+        protected virtual T TrazerDadosParaEdicao(T item) { return item; }
         protected virtual IQueryable<TProjecao> TrazerDadosParaLista(IQueryable<TProjecao> query) { return query; }
         protected virtual IQueryable<TProjecao> Filtrar(IQueryable<TProjecao> query, string termoDePesquisa, string campoPesquisa)
         {
@@ -111,7 +111,7 @@ namespace Inpulse.WebApi.Base
             int pagina = 1, int itensPorPagina = 0, string campoPesquisa = "")
         {
             var Item = this.Selecionar();
-            var queryOriginal = context.Set<T>().AsQueryable().Select(Item);
+            var queryOriginal = context.Set<T>().AsNoTracking().Select(Item);
             
             if (!string.IsNullOrWhiteSpace(termo))
             {
@@ -124,8 +124,6 @@ namespace Inpulse.WebApi.Base
                 
             if (itensPorPagina > 0)    
                 dados = dados.Skip(toSkip).Take(itensPorPagina);
-
-            //if (direcaoAsc) dados = dados.OrderBy(ord => ord.campoOrdenacao ?? campoPesquisa);
             
             return Ok(await dados.ToListAsync());
         }
@@ -134,7 +132,7 @@ namespace Inpulse.WebApi.Base
         [Route("{id:int}")]
         public async Task<ActionResult<TProjecao>> GetById([FromServices] DataContext context, int id)
         {
-            var dados = await context.Set<T>().AsNoTracking().FirstOrDefaultAsync(x => x.Id == id);
+            var dados = this.TrazerDadosParaEdicao(await context.Set<T>().AsNoTracking().FirstOrDefaultAsync(x => x.Id == id));
             return Ok(dados);
         }
 

@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -92,6 +93,8 @@ namespace Inpulse.Domain
         [Column(name:"OBS_OPERADOR")]
         public string ObsOperador { get; set; }
         public string Ativo { get; set; }
+        [NotMapped]
+        public string Resultado { get; set; }
     }
 
 }
