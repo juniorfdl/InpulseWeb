@@ -25,6 +25,5 @@ namespace Inpulse.Domain
         [Column(name:"TIPO_ACAO")]
         public string TipoAcao {get;set;}
         public string Obs {get;set;}
-        
     }
 }
